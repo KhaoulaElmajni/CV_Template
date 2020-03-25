@@ -1,0 +1,82 @@
+
+1
+<?xml version="1.0" encoding="UTF-8" ?>
+2
+<!DOCTYPE html>
+3
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+4
+&lt;head&gt;
+5
+​
+6
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+7
+  <b:include data='blog' name='all-head-content'/>
+8
+​
+9
+  <title>
+10
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+11
+      <data:blog.pageTitle/>
+12
+      <b:else/>
+13
+      <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+14
+        <data:blog.pageName/> - <data:blog.title/>
+15
+        <b:else/>
+16
+        ERROR 404 - <data:blog.title/> 
+17
+      </b:if>
+18
+    </b:if>
+19
+  </title>
+20
+​
+21
+  <!-- Description and Keywords -->
+22
+  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+23
+    <meta content='YOUR DESCRIPTION HERE' name='description'/>
+24
+  </b:if>
+25
+  <meta content='YOUR KEYWORDS HERE' name='keywords'/>
+26
+  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+27
+    <meta expr:content='data:blog.pageName' property='og:title'/>
+28
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+29
+    <meta content='article' property='og:type'/>
+30
+  </b:if>
+31
+  <b:if cond='data:blog.postImageUrl'>
+32
+    <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+33
+    <b:else/>
+34
+    <b:if cond='data:blog.postImageThumbnailUrl'>
+35
+      <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+36
+    </b:if></b:if>
+37
+  <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+38
+    <meta expr:content='data:blog.metaDescription' name='og:description'/>
+39
+  </b:if>
+40
+  <meta expr:content='data:blog.title' property='og:site_name'/>
+Modèle : Modifier le modèle
